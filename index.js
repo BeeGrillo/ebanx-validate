@@ -1,11 +1,12 @@
+import express from 'express'; 'express'
+import {runEvent, getBalance, resetAccounts} from './src/controller/accountController.js'
 
-const express = require('express')
 const app = express()
 const PORT = 3000;
 
-app.get('/reset', ()=>{})
-app.get('/balance', ()=>{})
-app.post('/event', ()=>{})
+app.post('/reset', resetAccounts)
+app.get('/balance', getBalance)
+app.post('/event', runEvent)
 
 app.listen(PORT)
 
